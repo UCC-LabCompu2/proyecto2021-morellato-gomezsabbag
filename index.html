@@ -10,7 +10,7 @@
 </head>
 <body>
 <header>
-    <img src="imagenes/logo_ahorcado.png">
+    <img src="imagenes/logoicono_ahorcado.png">
     <h1>Juego del Ahorcado</h1>
 </header>
 
@@ -19,7 +19,32 @@
 
 </nav>
 <section>
-
+    <div>
+        Elije la categoria de palabras:
+        <p>
+            <select>
+                <OPTION value="animales">ANIMALES</OPTION>
+                <OPTION value="comida">COMIDA</OPTION>
+                <OPTION value="paises">PAISES</OPTION>
+                <OPTION value="objetos">OBJETOS</OPTION>
+        </p>
+        </select>
+    </div>
+    <div>
+        Elije la cantidad de letras de la palabra:
+        <p>
+            <input type="number" name="letras" min="4" max="12">
+        </p>
+    </div>
+    <div>
+        Elije la cantidad de jugadores:
+        <p>Multijugador<input type="radio" name="tipodejugador" value="multijugador">
+            Un jugador<input type="radio" name="tipodejugador" value="unjugador">
+        </p>
+    </div>
+    <div>
+        <button type="button">Siguiente</button><link rel="">
+    </div>
 </section>
 
 </body>
