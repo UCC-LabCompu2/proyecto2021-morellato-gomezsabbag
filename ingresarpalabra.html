@@ -7,9 +7,40 @@
   <meta content="Web del Juego del Ahorcado" name="descripcion">
   <meta content="Juego, adivinar, ahorcado, palabras" name="palabras-claves">
   <link rel="stylesheet" href="miestilo_Ahorcado.css">
+  <link rel="index" href="index.html">
 
 </head>
+<header>
+  <img id="logo" src="imagenes/ahorcadonegro.png">
+  <img id="logo2" src="imagenes/ahorcadonegro.png">
+</header>
 <body>
+<section>
+  <div class="categoria">
+    <h3>Elije la categoria de palabras:</h3>
+    <p>
+      <select class="select">
+        <OPTION value="animales">ANIMALES</OPTION>
+        <OPTION value="comida">COMIDA</OPTION>
+        <OPTION value="paises">PAISES</OPTION>
+        <OPTION value="objetos">OBJETOS</OPTION>
+    </p>
+    </select>
+  </div>
+  <div>
+    Elije la cantidad de letras de la palabra:
+    <p>
+      <input type="number" name="letras" min="4" max="12">
+    </p>
+  </div>
+  <div>
+    Elije la cantidad de jugadores:
+    <p>Multijugador<input type="radio" name="tipodejugador" value="multijugador">
+      Un jugador<input type="radio" name="tipodejugador" value="unjugador">
+    </p>
+  </div>
+
+</section>
 
   <canvas id="img_palabra">
     El navegador no soporta canvas

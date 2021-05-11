@@ -1,4 +1,38 @@
-h1{
-    color: #245833
-;
+
+h1 {
+    color: #9371f5;
+    font-size: 70px;
+    margin-top: 30px;
+    text-shadow: 3px 3px #8728e0;
+    border: medium solid #be90e8;
+}
+h2{
+    color: #9371f5;
+    font-size: 30px;
+    text-shadow: 3px 3px #8728e0;
+}
+
+body {
+
+    background-color: #474242;
+    text-align: center;
+    font-family: "Arial Black";
+    background-image: url("imagenes/fondoazul.jpg");
+    background-repeat: no-repeat;
+    background-size: 1700px;
+    background-attachment: scroll;
+}
+
+div.categorias h3 {
+    font-size: 60px;
+    color: #f5f07d;
+}
+div{
+    font-size: large;
+}
+
+#hangman{
+    width: 50px;
+    float: left;
+    margin-bottom: 100px;
 }
