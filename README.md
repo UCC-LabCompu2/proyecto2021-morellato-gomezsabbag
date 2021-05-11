@@ -1,8 +1,8 @@
 # Juego del Ahorcado
 Esta pagina corresponde al Juego del Ahorcado.
-Link al sitio : [Juego del Ahorcado](https://github.com/UCC-LabCompu2/proyecto2021-morellato-gomezsabbag/blob/main/index.html)
+Link al sitio : [Juego del Ahorcado](https://ucc-labcompu2.github.io/proyecto2021-morellato-gomezsabbag/)
 
-## Autores
+## Autoresgit
 * Morellato, Agostina
 * Gomez Sabbag, Zoe
 
