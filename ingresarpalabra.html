@@ -1,48 +1,53 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Juego del Ahorcado</title>
-  <meta content="Agostina Morellato y Zoe Gomez Sabbag" name="autoras">
-  <meta content="Web del Juego del Ahorcado" name="descripcion">
-  <meta content="Juego, adivinar, ahorcado, palabras" name="palabras-claves">
-  <link rel="stylesheet" href="miestilo_Ahorcado.css">
+    <meta charset="UTF-8">
+    <title>Juego del Ahorcado</title>
+    <meta content="Agostina Morellato y Zoe Gomez Sabbag" name="autoras">
+    <meta content="Web del Juego del Ahorcado" name="descripcion">
+    <meta content="Juego, adivinar, ahorcado, palabras" name="palabras-claves">
+    <link rel="stylesheet" href="miestilo_Ahorcado.css">
 
 </head>
 <header>
-  <h1>JUEGO DEL AHORCADO</h1>
-  <img id="logo" src="imagenes/hangmanrosa.png">
-  <img id="logo2" src="imagenes/hangmanrosa.png">
+    <h1>JUEGO DEL AHORCADO</h1>
+    <img id="logo" src="imagenes/hangmanrosa.png" alt="Esta es una imagen de una soga">
+    <img id="logo2" src="imagenes/hangmanrosa.png" alt="Esta es una imagen de una soga">
 </header>
 <body>
 <section>
-  <div class="categoria">
-    Elije la categoria de palabras:
-    <p>
-      <select class="select">
-        <OPTION value="animales">ANIMALES</OPTION>
-        <OPTION value="comida">COMIDA</OPTION>
-        <OPTION value="paises">PAISES</OPTION>
-        <OPTION value="objetos">OBJETOS</OPTION>
-    </select>
-    </p>
-    Elije la cantidad de letras de la palabra:
-    <p>
-      <input type="number" name="letras" min="4" max="12">
-    </p>
-    Elije la cantidad de jugadores:
-    <p>Multijugador<input type="radio" name="tipodejugador" value="multijugador">
-      Un jugador<input type="radio" name="tipodejugador" value="unjugador">
-    </p>
-  </div>
-  <div class="boton">
-    <button type="button">¡COMENZAR!</button>
-  </div>
+    <div class="categoria">
+        <label for="categ">Elije la categoria de palabras:</label>
+            <p>
+                <select class="select" id="categ">
+                    <OPTION value="animales">ANIMALES</OPTION>
+                    <OPTION value="comida">COMIDA</OPTION>
+                    <OPTION value="paises">PAISES</OPTION>
+                    <OPTION value="objetos">OBJETOS</OPTION>
+                </select>
+            </p>
+            <label for="cantpalabras">Elije la cantidad de letras de la palabra:</label>
+            <p>
+                <input type="number" name="letras" min="4" max="12" id="cantpalabras">
+            </p>
+            Elije la cantidad de jugadores:
+            <p>
+                <label for="multijugador">Multijugador</label><input type="radio" name="tipodejugador"
+                                                                     value="multijugador" id="multijugador">
+                <label for="unjugador"> Un jugador</label><input type="radio" name="tipodejugador" value="unjugador"
+                                                                 id="unjugador">
+            </p>
+    </div>
+    <div class="boton">
+        <a href="pagina3.html">
+        <button type="button">¡COMENZAR!</button>
+        </a>
+    </div>
 </section>
 
-  <canvas id="img_palabra">
+<canvas id="img_palabra">
     El navegador no soporta canvas
-  </canvas>
+</canvas>
 
 </body>
 </html>
