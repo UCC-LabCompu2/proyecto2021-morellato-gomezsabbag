@@ -22,10 +22,16 @@ body {
     background-attachment: scroll;
 }
 
-div.categorias h3 {
+div.categorias {
+    margin-top: 30px;
     font-size: 60px;
     color: #f5f07d;
 }
 
-
+#logo{
+    float: left;
+}
+#logo2{
+    float: right;
+}
 
