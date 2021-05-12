@@ -29,7 +29,7 @@ Link al sitio : [Juego del Ahorcado](https://ucc-labcompu2.github.io/proyecto202
 - [x] El estilo de los elementos debe establecerse en un archivo CSS (prohibido poner el atributo style a los elementos o emplear estilos incrustados).
 - [x] El CSS debe contar mínimo con un tipo de cada forma (por Tag, por ID y por clase).
 - [x] El código debe estar pusheado en el repositorio (emplear gh-pages), y no debe haber diferencias entre **main** y **gh-pages** (verificar de realizar el Merge).
-- [ ] No debe haber errores presentes (realizar *Code* > *Inspect Code* para verificar que no haya errores)
+- [x] No debe haber errores presentes (realizar *Code* > *Inspect Code* para verificar que no haya errores)
 - [x] Todas las etiquetas deben estar correctamente cerradas
 - [x] Los ids de los elementos deben ser unívocos
 - [x] El repositorio no debe contener archivos innecesarios (no debe contener .idea o .vsc, en todo caso emplear **.gitignore**)

@@ -1,35 +1,41 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Juego del Ahorcado</title>
-  <meta content="Agostina Morellato y Zoe Gomez Sabbag" name="autoras">
-  <meta content="Web del Juego del Ahorcado" name="descripcion">
-  <meta content="Juego, adivinar, ahorcado, palabras" name="palabras-claves">
-  <link rel="stylesheet" href="miestilo_Ahorcado.css">
+    <meta charset="UTF-8">
+    <title>Juego del Ahorcado</title>
+    <meta content="Agostina Morellato y Zoe Gomez Sabbag" name="autoras">
+    <meta content="Web del Juego del Ahorcado" name="descripcion">
+    <meta content="Juego, adivinar, ahorcado, palabras" name="palabras-claves">
+    <link rel="stylesheet" href="miestilo_Ahorcado.css">
 </head>
 <body>
 <header>
-  <h1>JUEGO DEL AHORCADO</h1>
-  <img id="logo" src="imagenes/hangmanrosa.png" alt="Esta es una dibujo de un hombre ahorcado">
-  <img id="logo2" src="imagenes/hangmanrosa.png" alt="Esta es una dibujo de un hombre ahorcado">
+    <h1>JUEGO DEL AHORCADO</h1>
+    <img id="logo" src="imagenes/hangmanrosa.png" alt="Esta es una dibujo de un hombre ahorcado">
+    <img id="logo2" src="imagenes/hangmanrosa.png" alt="Esta es una dibujo de un hombre ahorcado">
 </header>
 <section>
-  <div>
-   <p>
-     <!--INPUT PUESTOS DE MANERA ILUSTRATIVA PARA QUE SE VEA COMO SERIA CON LOS DATOS RECOPILADOS DE LA PAGINA ANTERIOR-->
-     <label for="cat"> Categoria: </label><input name="cate" placeholder="Animales" id="cat">
-   </p>
-    <p>
-      <label for="let">Cantidad de letras: </label><input name="letras" placeholder="6 letras" id="let">
-    </p>
-    <p>
-      <label for="jug"> Cantidad de jugadores: </label><input name="jugad" placeholder="Multijugadores" id="jug">
-    </p>
-  </div>
-  <div>
-    <label for="una">Ingrese una letra: </label><input type="text" name="letra" id="una">
-  </div>
+    <div>
+        <p>
+            <!--INPUT PUESTOS DE MANERA ILUSTRATIVA PARA QUE SE VEA COMO SERIA CON LOS DATOS RECOPILADOS DE LA PAGINA ANTERIOR-->
+            <label for="cat"> Categoria: </label><input name="cate" placeholder="Animales" id="cat">
+            <label for="let">Cantidad de letras: </label><input name="letras" placeholder="6 letras" id="let">
+            <label for="Cantidaddejugadores"> Cantidad de jugadores: </label><input name="jugad"
+                                                                                    placeholder="Multijugadores"
+                                                                                    id="Cantidaddejugadores">
+        </p>
+    </div>
+    <div class="letras">
+        <label for="Ingreseunaletra">INGRESE UNA LETRA: </label><input type="text" name="letra" id="Ingreseunaletra">
+        <h2>
+            <button type="button">¡COMPROBAR!</button>
+        </h2>
+    </div>
+    <div class="boton1">
+        <a href="index.html">
+            <button type="button"><h2>VOLVER AL INICIO</h2></button>
+        </a>
+    </div>
 
 
 </section>

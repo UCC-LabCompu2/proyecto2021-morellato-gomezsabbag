@@ -3,19 +3,32 @@ h1 {
     color: #6743d7;
     font-size: 80px;
     text-shadow: 3px 3px #510093;
+
+}
+
+h2 {
+    color: #6543d7;
+    font-size: 20px;
+    text-shadow: 2px 2px #c795f1;
+}
+
+.segundo {
+    color: #a893e2;
+    font-size: 5px;
+    text-shadow: 2px 2px #9150e2;
     border: medium solid #9154e0;
 }
-h2{
-    color: #a893e2;
+
+.prim {
+    color: #683ce0;
     font-size: 40px;
     text-shadow: 2px 2px #9150e2;
 }
 
 body {
-
     background-color: #7f68db;
     text-align: center;
-    font-family: "Arial Black";
+    font-family: "Arial Black", serif;
     background-image: url("imagenes/fondovioleta.jpg");
     background-repeat: no-repeat;
     background-size: cover;
@@ -28,10 +41,33 @@ div.categorias {
     color: #f5f07d;
 }
 
-#logo{
+#logo {
     float: left;
-}
-#logo2{
-    float: right;
+    padding-top: 170px;
 }
 
+#logo2 {
+    float: right;
+    padding-top: 170px;
+}
+
+div.boton1 {
+    padding-top: 100px;
+}
+
+#instr {
+    color: #7a2bd9;
+    text-align: justify-all;
+}
+
+#modos {
+    color: #7a2bd9;
+    text-align: justify-all;
+}
+
+#titulo{
+    color: #6743d7;
+    font-size: 40px;
+    text-shadow: 3px 3px #510093;
+    border: medium solid #9154e0;
+}
