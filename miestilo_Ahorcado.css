@@ -71,3 +71,8 @@ div.boton1 {
     text-shadow: 3px 3px #510093;
     border: medium solid #9154e0;
 }
+#ahorca{
+    float: left;
+    width: 30px;
+    height: 30px;
+}
