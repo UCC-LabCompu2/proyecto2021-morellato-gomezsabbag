@@ -21,6 +21,13 @@ h2 {
     margin-top: 20px;
 
 }
+h22 {
+    color: #dec83b;
+    font-size: 10px;
+    text-align: center;
+    margin-top: 5px;
+
+}
 h3 {
     color: #005aa5;
     font-size: 30px;
@@ -80,7 +87,7 @@ div.categorias {
     padding-top: 10px;
 }
 #logo2 {
-    float: left;
+    float: right;
     margin-right: 50px;
     padding-top: 10px;
 }
@@ -90,14 +97,15 @@ div.boton1 {
 }
 
 #instr {
-    color: #faf3f7;
-    margin-top: 183px;
+    color: #7a2bd9;
+    margin-top: 150px;
     text-align: justify-all;
 }
 
 #modos {
     color: #7a2bd9;
     text-align: justify-all;
+    margin-top: 100px;
 }
 
 #titulo{
