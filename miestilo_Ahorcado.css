@@ -16,14 +16,14 @@ h4 {
 
 h2 {
     color: #dec83b;
-    font-size: 25px;
+    font-size: 15px;
     text-align: center;
     margin-top: 20px;
 
 }
 h3 {
     color: #005aa5;
-    font-size: 22px;
+    font-size: 18px;
     text-align: center;
     margin-top: 45px;
 }
@@ -43,7 +43,7 @@ h5{
 
 .prim {
     color: rgba(60, 88, 226, 0.77);
-    font-size: 60px;
+    font-size: 30px;
     text-shadow: 2px 2px #ffffff;
 
 
