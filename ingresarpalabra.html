@@ -13,40 +13,35 @@
 <header>
     <h4>JUEGO <br>DEL AHORCADO</h4>
 </header>
-<body class="body3">
 
+<body class="body3">
 <section>
     <div class="categoria"><h5>
         <label for="categ">Elije la categoria de palabras:</label>
-        <p>
             <select class="select" id="categ">
                 <OPTION value="animales">ANIMALES</OPTION>
                 <OPTION value="comida">COMIDA</OPTION>
                 <OPTION value="paises">PAISES</OPTION>
                 <OPTION value="objetos">OBJETOS</OPTION>
-            </select>
-        </p>
+            </select><br>
         <label for="cantpalabras">Elije la cantidad de letras de la palabra:</label>
-        <p>
-            <input type="number" name="letras" min="4" max="12" id="cantpalabras">
-        </p>
-        Elije la cantidad de jugadores:
 
-        <p>
+            <input type="number" name="letras" min="7" max="9" id="cantpalabras"><br>
+        <!--Elije la cantidad de jugadores:
             <label for="multijugador">Multijugador</label><input type="radio" name="tipodejugador"
                                                                  value="multijugador" id="multijugador">
             <label for="unjugador"> Un jugador</label><input type="radio" name="tipodejugador" value="unjugador"
-                                                             id="unjugador">
-        </p></h5>
+                                                             id="unjugador">-->
+    </h5><br>
     </div>
     <div class="boton">
         <a href="pagina3.html">
-            <button type="button" class="prim">¡COMENZAR!</button>
+            <button type="button" class="prim" onclick="cargarWeb()">¡COMENZAR!</button>
         </a>
     </div>
 </section>
 <a href="index.html">
-    <button type="button"><h22>VOLVER AL INICIO</h22></button>
+    <button type="button"><h6>VOLVER AL INICIO</h6></button>
 </a>
 <canvas id="img_palabra">
     El navegador no soporta canvas
