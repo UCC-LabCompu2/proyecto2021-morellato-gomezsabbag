@@ -1,54 +1,92 @@
 
 h1 {
-    color: #6743d7;
+    color: #e7e058;
     font-size: 80px;
-    text-shadow: 3px 3px #510093;
-    border: medium solid #9154e0;
+    text-shadow: 3px 3px #806d27;
+    text-align: right;
+    padding-bottom: inherit;
+}
+h4 {
+    color: #e7e058;
+    font-size: 60px;
+    text-shadow: 3px 3px #806d27;
+    text-align: center;
+
 }
 
 h2 {
-    color: #6543d7;
+    color: #dec83b;
     font-size: 20px;
-    text-shadow: 2px 2px #c795f1;
-}
+    text-align: center;
+    margin-top: 20px;
 
+}
+h3 {
+    color: #005aa5;
+    font-size: 20px;
+    text-align: center;
+    margin-top: 45px;
+}
+h5{
+    color: #f2f3f5;
+    font-size: 20px;
+    text-align: center;
+
+
+}
 .segundo {
-    color: #a893e2;
+    color: #e2933c;
     font-size: 5px;
-    text-shadow: 2px 2px #9150e2;
-    border: medium solid #9154e0;
+    text-shadow: 2px 2px #e2933c;
+    border: medium solid #e2933c;
 }
 
 .prim {
-    color: #683ce0;
+    color: rgba(60, 88, 226, 0.77);
     font-size: 40px;
-    text-shadow: 2px 2px #9150e2;
+    text-shadow: 2px 2px #ffffff;
+
+
 }
 
 body {
     background-color: #7f68db;
     text-align: center;
     font-family: "Arial Black", serif;
-    background-image: url("imagenes/fondovioleta.jpg");
+    background-image: url("imagenes/colores.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    background-attachment: scroll;
+    background-attachment: unset;
 }
+.body2 {
+    background-color: #7f68db;
+    text-align: center;
+    font-family: "Arial Black", serif;
+    background-image: url("imagenes/lineas3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.body3 {
+    background-color: #7f68db;
+    text-align: center;
+    font-family: "Arial Black", serif;
+    background-image: url("imagenes/lineas4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 
 div.categorias {
-    margin-top: 30px;
     font-size: 60px;
-    color: #f5f07d;
+    color: #f1f1ec;
+
 }
 
-#logo {
-    float: left;
-    padding-top: 170px;
-}
 
 #logo2 {
-    float: right;
-    padding-top: 170px;
+    float: left;
+    margin-right: 50px;
+    padding-top: 10px;
 }
 
 div.boton1 {
@@ -56,7 +94,8 @@ div.boton1 {
 }
 
 #instr {
-    color: #7a2bd9;
+    color: #faf3f7;
+    margin-top: 183px;
     text-align: justify-all;
 }
 
@@ -66,13 +105,18 @@ div.boton1 {
 }
 
 #titulo{
-    color: #6743d7;
+    color: #e7e058;
     font-size: 40px;
-    text-shadow: 3px 3px #510093;
-    border: medium solid #9154e0;
+    text-shadow: 3px 3px #806d27;
+
 }
 #ahorca{
     float: left;
     width: 30px;
     height: 30px;
+}
+
+.can{
+    border:1px solid rgba(77, 17, 127, 0);
+    background: rgba(204, 220, 54, 0);
 }

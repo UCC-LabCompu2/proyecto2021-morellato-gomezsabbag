@@ -8,15 +8,16 @@
     <meta content="Juego, adivinar, ahorcado, palabras" name="palabras-claves">
     <link rel="stylesheet" href="miestilo_Ahorcado.css">
     <link rel="shortcut icon" href="imagenes/hangmanrosa.png">
+    <script type="text/javascript" src="AhorcadoFunciones.js"></script>
 </head>
 <header>
-    <h1>JUEGO DEL AHORCADO</h1>
-    <img id="logo" src="imagenes/hangmanrosa.png" alt="Esta es una imagen de una soga">
-    <img id="logo2" src="imagenes/hangmanrosa.png" alt="Esta es una imagen de una soga">
+    <h4>JUEGO <br>DEL AHORCADO</h4>
+
 </header>
-<body>
+<body class="body2">
+
 <section>
-    <div class="categoria">
+    <div class="categoria"><h5>
         <label for="categ">Elije la categoria de palabras:</label>
         <p>
             <select class="select" id="categ">
@@ -31,26 +32,23 @@
             <input type="number" name="letras" min="4" max="12" id="cantpalabras">
         </p>
         Elije la cantidad de jugadores:
+
         <p>
             <label for="multijugador">Multijugador</label><input type="radio" name="tipodejugador"
                                                                  value="multijugador" id="multijugador">
             <label for="unjugador"> Un jugador</label><input type="radio" name="tipodejugador" value="unjugador"
                                                              id="unjugador">
-        </p>
+        </p></h5>
     </div>
     <div class="boton">
         <a href="pagina3.html">
             <button type="button">¡COMENZAR!</button>
         </a>
-    </div>
-    <div class="boton1">
         <a href="index.html">
             <h2>
-                <button type="button">VOLVER AL INICIO</button>
+                <button type="button"><h2>VOLVER AL INICIO</h2></button>
             </h2>
         </a>
-    </div>
-
 
 </section>
 
