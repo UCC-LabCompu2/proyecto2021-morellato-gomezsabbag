@@ -1,10 +1,21 @@
 /**
  * Juego del Ahorcado.
- * @method aleatorio -
- * @method esta
- * @method estanTodas
- * @param  {string} id - El id de los inputos.
- * @param {number} valor - El valor de los inputs de cantidad de letras.
+ * @method Ahorcado - declaracion de la clase ahorcado
+ * @method Ahorcado.prototype - imagenes para usar en el canvas segun los aciertos o errores
+ * @method DibujoPost - coloca la imagen de la base/poste.
+ * @method DibujoCab - coloca la imagen de la cabeza.
+ * @method Dibujocuerp - coloca la imagen del cuerpo.
+ * @method DibujoBrazoDer - coloca la imagen del brazo derecho.
+ * @method DibujoBrazoIzq - coloca la imagen del brazo izq.
+ * @method DibujoPiernaDer - coloca la imagen de la pierna derecha.
+ * @method DibujoPiernaIzq - coloca la imagen de la pierna izq.
+ * @method Ahorcado.prototype.trazar - interfiere en cuando es un error y cuando no.
+ * @method agregarLetra - funcion para introducir las letras
+ * @method iniciar - inicializa el canvas.
+ * @method mostrarPalabra - muestra las pistas (letras que ya se adivinaron)
+ * @method mostrarPista - convierte la palabra secreta en guiones (-)
+ * @param  {this}  - variables locales de la clase
+ * @param {string} palabra - El valor de los inputs de cantidad de letras.
  * @return
  */
 
@@ -14,14 +25,9 @@ var palabra = palabra[aleatorio];
 
 var hombre, l, espacio;
 
-
-// Declaracion de la clase ahorcado
-
 var Ahorcado = function(con)
 {
-    //this es las variables locales de la clase, accesibles en toda la clase
-    //this.contexto es el context de dibujo del canvas, que llega por parametro
-    //desde la variable con
+
     this.contexto = con;
     this.maximo = 7;
     this.intentos = 0;
@@ -32,29 +38,29 @@ var Ahorcado = function(con)
 Ahorcado.prototype.dibujar = function()
 {
 
-    var dibujar = this.contexto
+    var dibujar = this.contexto;
 
     // Poste
     dibujar.beginPath();
     dibujar.poste = new Image();
-    dibujar.poste.src = "base.png";
+    dibujar.poste.src = "imagenes/base.png";
     dibujar.poste.onload = dibujoPost;
     function dibujoPost()
     {
-        dibujar.drawImage(dibujar.poste, 160, 0);
+        dibujar.drawImage(dibujar.poste, 100, 0);
     }
     dibujar.closePath();
 
     if(this.intentos > 0)
     {
-        // Rostro
+        // Cabeza
         dibujar.beginPath();
         dibujar.cabeza = new Image();
-        dibujar.cabeza.src = "cabeza.png";
+        dibujar.cabeza.src = "imagenes/cabeza.png";
         dibujar.cabeza.onload = dibujoCab;
         function dibujoCab()
         {
-            dibujar.drawImage(dibujar.cabeza, 220, 30);
+            dibujar.drawImage(dibujar.cabeza, 100, 0);
         }
         dibujar.closePath();
 
@@ -63,63 +69,63 @@ Ahorcado.prototype.dibujar = function()
             // Cuerpo
             dibujar.beginPath();
             dibujar.cuerpo = new Image();
-            dibujar.cuerpo.src = "cuerpo.png";
+            dibujar.cuerpo.src = "imagenes/cuerpo.png";
             dibujar.cuerpo.onload = dibujoCuerp;
             function dibujoCuerp()
             {
-                dibujar.drawImage(dibujar.cuerpo, 220, 100);
+                dibujar.drawImage(dibujar.cuerpo, 100, 0);
             }
             dibujar.closePath();
 
             if(this.intentos > 2)
             {
-                // Brazo derecho
+                // Brazo 1
                 dibujar.beginPath();
                 dibujar.brazo1 = new Image();
-                dibujar.brazo1.src = "brazo1.png";
+                dibujar.brazo1.src = "imagenes/brazo1.png";
                 dibujar.brazo1.onload = dibujoBrazoDer;
                 function dibujoBrazoDer()
                 {
-                    dibujar.drawImage(dibujar.brazo1, 190, 110);
+                    dibujar.drawImage(dibujar.brazo1, 100, 0);
                 }
                 dibujar.closePath();
 
                 if(this.intentos > 3)
                 {
-                    // Brazo izquierdo
+                    // Brazo 2
                     dibujar.beginPath();
                     dibujar.brazo2 = new Image();
-                    dibujar.brazo2.src = "brazo2.png";
+                    dibujar.brazo2.src = "imagenes/brazo2.png";
                     dibujar.brazo2.onload = dibujoBrazoIzq;
                     function dibujoBrazoIzq()
                     {
-                        dibujar.drawImage(dibujar.brazo2, 330, 110);
+                        dibujar.drawImage(dibujar.brazo2, 100, 0);
                     }
                     dibujar.closePath();
 
                     if(this.intentos > 4)
                     {
-                        // Pierna derecha
+                        // Pierna 1
                         dibujar.beginPath();
                         dibujar.pierna1 = new Image();
-                        dibujar.pierna1.src = "pierna1.png";
+                        dibujar.pierna1.src = "imagenes/pierna1.png";
                         dibujar.pierna1.onload = dibujoPiernaDer;
                         function dibujoPiernaDer()
                         {
-                            dibujar.drawImage(dibujar.pierna1, 230, 200);
+                            dibujar.drawImage(dibujar.pierna1, 100, 0);
                         }
                         dibujar.closePath();
 
                         if(this.intentos > 5)
                         {
-                            // Pierna izquierda
+                            // Pierna 2
                             dibujar.beginPath();
                             dibujar.pierna2 = new Image();
-                            dibujar.pierna2.src = "pierna2.png";
+                            dibujar.pierna2.src = "imagenes/pierna2.png";
                             dibujar.pierna2.onload = dibujoPiernaIzq;
                             function dibujoPiernaIzq()
                             {
-                                dibujar.drawImage(dibujar.pierna2, 285, 200);
+                                dibujar.drawImage(dibujar.pierna2, 100, 0);
                             }
                             dibujar.closePath();
                         }
@@ -189,7 +195,7 @@ function mostrarPalabra (palabra, ahorcado, letra)
     mostrarPista(espacio);
 
 
-    // Si No lo encontre...
+    // Si No se encuentra la letra
     if(!encontrado)
     {
         ahorcado.trazar();
