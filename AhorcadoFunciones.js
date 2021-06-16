@@ -37,7 +37,7 @@ Ahorcado.prototype.dibujar = function()
     // Poste
     dibujar.beginPath();
     dibujar.poste = new Image();
-    dibujar.poste.src = "palo.png";
+    dibujar.poste.src = "base.png";
     dibujar.poste.onload = dibujoPost;
     function dibujoPost()
     {
@@ -50,7 +50,7 @@ Ahorcado.prototype.dibujar = function()
         // Rostro
         dibujar.beginPath();
         dibujar.cabeza = new Image();
-        dibujar.cabeza.src = "cabeza-android.png";
+        dibujar.cabeza.src = "cabeza.png";
         dibujar.cabeza.onload = dibujoCab;
         function dibujoCab()
         {
@@ -63,7 +63,7 @@ Ahorcado.prototype.dibujar = function()
             // Cuerpo
             dibujar.beginPath();
             dibujar.cuerpo = new Image();
-            dibujar.cuerpo.src = "cuerpo-android.png";
+            dibujar.cuerpo.src = "cuerpo.png";
             dibujar.cuerpo.onload = dibujoCuerp;
             function dibujoCuerp()
             {
@@ -76,7 +76,7 @@ Ahorcado.prototype.dibujar = function()
                 // Brazo derecho
                 dibujar.beginPath();
                 dibujar.brazo1 = new Image();
-                dibujar.brazo1.src = "brazo-derecho.png";
+                dibujar.brazo1.src = "brazo1.png";
                 dibujar.brazo1.onload = dibujoBrazoDer;
                 function dibujoBrazoDer()
                 {
@@ -89,7 +89,7 @@ Ahorcado.prototype.dibujar = function()
                     // Brazo izquierdo
                     dibujar.beginPath();
                     dibujar.brazo2 = new Image();
-                    dibujar.brazo2.src = "brazo-izquierdo.png";
+                    dibujar.brazo2.src = "brazo2.png";
                     dibujar.brazo2.onload = dibujoBrazoIzq;
                     function dibujoBrazoIzq()
                     {
@@ -102,7 +102,7 @@ Ahorcado.prototype.dibujar = function()
                         // Pierna derecha
                         dibujar.beginPath();
                         dibujar.pierna1 = new Image();
-                        dibujar.pierna1.src = "pierna-derecha.png";
+                        dibujar.pierna1.src = "pierna1.png";
                         dibujar.pierna1.onload = dibujoPiernaDer;
                         function dibujoPiernaDer()
                         {
@@ -115,7 +115,7 @@ Ahorcado.prototype.dibujar = function()
                             // Pierna izquierda
                             dibujar.beginPath();
                             dibujar.pierna2 = new Image();
-                            dibujar.pierna2.src = "pierna-izquierda.png";
+                            dibujar.pierna2.src = "pierna2.png";
                             dibujar.pierna2.onload = dibujoPiernaIzq;
                             function dibujoPiernaIzq()
                             {
