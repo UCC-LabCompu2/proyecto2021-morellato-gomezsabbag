@@ -8,216 +8,218 @@
  * @return
  */
 
-function aleatorio(inferior,superior){
-    numPosibilidades = superior - inferior + 1;
-    aleat = Math.random() * numPosibilidades;
-    aleat = Math.floor(aleat);
-    return parseInt(inferior) + aleat;
-}
+var palabra = ["Caballo", "Barco", "Terremoto", "Cocinar", "Avalancha", "Gobierno", "Robot", "Ordenador", "Flores"];
+var aleatorio =  [Math.floor(Math.random() * palabra.length)];
+var palabra = palabra[aleatorio];
 
-function esta(caracter, miarray) {
-    for (var j = 0; j < miarray.length; j++) {
-        if (caracter == miarray[j]) {
-            return true;
-        } else {
-            return false;
-        }
+var hombre, l, espacio;
+
+
+// Declaracion de la clase ahorcado
+
+var Ahorcado = function(con)
+{
+    //this es las variables locales de la clase, accesibles en toda la clase
+    //this.contexto es el context de dibujo del canvas, que llega por parametro
+    //desde la variable con
+    this.contexto = con;
+    this.maximo = 7;
+    this.intentos = 0;
+    this.vivo = true;
+
+    this.dibujar();
+}
+Ahorcado.prototype.dibujar = function()
+{
+
+    var dibujar = this.contexto
+
+    // Poste
+    dibujar.beginPath();
+    dibujar.poste = new Image();
+    dibujar.poste.src = "palo.png";
+    dibujar.poste.onload = dibujoPost;
+    function dibujoPost()
+    {
+        dibujar.drawImage(dibujar.poste, 160, 0);
     }
-}
+    dibujar.closePath();
 
-function estanTodas(arrayAciertos, mipalabra) {
-    for (var i = 0; i < mipalabra.length; i++) {
-        if (!esta(mipalabra.charAt(i), arrayAciertos)) {
-            return false;
-        } else {
-            return true;
+    if(this.intentos > 0)
+    {
+        // Rostro
+        dibujar.beginPath();
+        dibujar.cabeza = new Image();
+        dibujar.cabeza.src = "cabeza-android.png";
+        dibujar.cabeza.onload = dibujoCab;
+        function dibujoCab()
+        {
+            dibujar.drawImage(dibujar.cabeza, 220, 30);
         }
-    }
-}
+        dibujar.closePath();
 
-var palabras = ['ahorcado', 'lavadora', 'invierno', 'plastico', 'ordenador', 'colador', 'guantera', 'alimentador', 'calculos','perros','florero','cafeteria','candado','ordenar','electricidad','amarillo','heladera' ];
-var palabraEscogida = palabras[aleatorio(0,palabras.length-1)];
-var aciertos = [];
+        if(this.intentos > 1)
+        {
+            // Cuerpo
+            dibujar.beginPath();
+            dibujar.cuerpo = new Image();
+            dibujar.cuerpo.src = "cuerpo-android.png";
+            dibujar.cuerpo.onload = dibujoCuerp;
+            function dibujoCuerp()
+            {
+                dibujar.drawImage(dibujar.cuerpo, 220, 100);
+            }
+            dibujar.closePath();
 
-function escribePalabra(palabra, arrayAciertos){
-    var texto = '';
-    for(var i=0; i<palabra.length; i++){
-        texto += "<span>";
-        var cActual = palabra.charAt(i);
-        if(esta(cActual,arrayAciertos)){
-            texto += cActual;
-        }else{
-            texto += '_';
-        }
-        texto += "</span>";
-    }
-    $("#letras").html(texto);
-}
-
-
-$(document).ready(function(){
-
-    var letras = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'Ñ', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-    for(i=0; i<letras.length; i++){
-        letraActual = $('<span class="botonletra">' + letras[i] + '</span>');
-        letraActual.data("letra",letras[i]);
-        letraActual.button();
-        letraActual.click(function(){
-            var miletra = $(this).data("letra").toLowerCase();
-            if(palabraEscogida.indexOf(miletra)!=-1){
-                aciertos.push(miletra);
-                escribePalabra(palabraEscogida, aciertos);
-                if(estanTodas(aciertos,palabraEscogida)){
-                    var caja = $('<div class="dialogletra" title="Has Ganado!!">Felicidades! has adivinado la palabra!!</div>');
-                    caja.dialog({
-                        modal: true;
-                        width: 600;
-                        buttons: {
-                            "Ok": function(){
-                                $(this).dialog("close");
-                            }
-                        }
-                    });
+            if(this.intentos > 2)
+            {
+                // Brazo derecho
+                dibujar.beginPath();
+                dibujar.brazo1 = new Image();
+                dibujar.brazo1.src = "brazo-derecho.png";
+                dibujar.brazo1.onload = dibujoBrazoDer;
+                function dibujoBrazoDer()
+                {
+                    dibujar.drawImage(dibujar.brazo1, 190, 110);
                 }
-            }else{
-                numFallos++;
-                dibujaAhorcado(numFallos);
-                if(numFallos==6){
-                    var caja = $('<div class="dialogletra" title="Has Perdido!!">Lo lamento!! la palabra era: ' + palabraEscogida + '</div>');
-                    caja.dialog({
-                        modal: true;
-                        width: 600;
-                        buttons: {
-                            "Ok": function(){
-                                $(this).dialog("close");
-                            }
+                dibujar.closePath();
+
+                if(this.intentos > 3)
+                {
+                    // Brazo izquierdo
+                    dibujar.beginPath();
+                    dibujar.brazo2 = new Image();
+                    dibujar.brazo2.src = "brazo-izquierdo.png";
+                    dibujar.brazo2.onload = dibujoBrazoIzq;
+                    function dibujoBrazoIzq()
+                    {
+                        dibujar.drawImage(dibujar.brazo2, 330, 110);
+                    }
+                    dibujar.closePath();
+
+                    if(this.intentos > 4)
+                    {
+                        // Pierna derecha
+                        dibujar.beginPath();
+                        dibujar.pierna1 = new Image();
+                        dibujar.pierna1.src = "pierna-derecha.png";
+                        dibujar.pierna1.onload = dibujoPiernaDer;
+                        function dibujoPiernaDer()
+                        {
+                            dibujar.drawImage(dibujar.pierna1, 230, 200);
                         }
-                    });
+                        dibujar.closePath();
+
+                        if(this.intentos > 5)
+                        {
+                            // Pierna izquierda
+                            dibujar.beginPath();
+                            dibujar.pierna2 = new Image();
+                            dibujar.pierna2.src = "pierna-izquierda.png";
+                            dibujar.pierna2.onload = dibujoPiernaIzq;
+                            function dibujoPiernaIzq()
+                            {
+                                dibujar.drawImage(dibujar.pierna2, 285, 200);
+                            }
+                            dibujar.closePath();
+                        }
+                    }
                 }
             }
-            $(this).button("disable");
-            $(this).unbind( "click" );
-
-        })
-        $("#botonesletras").append(letraActual);
-    }
-
-    dibujaAhorcado(numFallos);
-
-    escribePalabra(palabraEscogida, aciertos);
-
-});
-
-
-
-function cargaContextoCanvas(idCanvas){
-    var elemento = document.getElementById(idCanvas);
-    if(elemento && elemento.getContext){
-        var contexto = elemento.getContext('2d');
-        if(contexto){
-            return contexto;
         }
     }
-    return false;
 }
-function borrarCanvas(contexto, anchura, altura){
-    contexto.clearRect(0,0,anchura,anchura);
-}
-function dibujaHorca(ctx){
-    ctx.fillStyle = #7f68db;
-    ctx.fillRect(64,9,26,237);
-    ctx.fillRect(175,193,26,53);
-    ctx.fillRect(64,193,136,15);
-    ctx.fillRect(64,9,115,11);
-    ctx.beginPath();
-    ctx.moveTo(64,65);
-    ctx.lineTo(64,80);
-    ctx.lineTo(133,11);
-    ctx.lineTo(118,11);
-    ctx.fill();
-}
-function dibujaCabeza(ctx){
-    var img = new Image();
-    img.onload = function(){
-        ctx.fillStyle = #7f68db;
-        ctx.drawImage(img,150,38);
-        ctx.fillRect(172,12,4,28);
+
+Ahorcado.prototype.trazar = function()
+{
+    this.intentos++;
+    if(this.intentos == this.maximo)
+    {
+        this.vivo = false;
+
     }
-    img.src = 'images/picture.jpg';
+    this.dibujar();
 }
 
+function iniciar()
+{
+    l = document.getElementById("letra");
+    var b = document.getElementById("boton");
 
-function dibujaCuerpo(ctx){
-    ctx.beginPath();
-    ctx.moveTo(171,82);
-    ctx.lineTo(168,119);
-    ctx.lineTo(162,147);
-    ctx.lineTo(189,149);
-    ctx.lineTo(185,111);
-    ctx.lineTo(183,83);
-    ctx.fill()
-}
-function dibujaBrazoIzq(ctx){
-    ctx.beginPath();
-    ctx.moveTo(173,102);
-    ctx.lineTo(140,128);
-    ctx.lineTo(155,133);
-    ctx.lineTo(178,114);
-    ctx.fill()
-}
-function dibujaBrazoDer(ctx){
-    ctx.beginPath();
-    ctx.moveTo(180,99);
-    ctx.lineTo(222,121);
-    ctx.lineTo(209,133);
-    ctx.lineTo(183,110);
-    ctx.fill()
-}
-function dibujaPiernaIzq(ctx){
-    ctx.beginPath();
-    ctx.moveTo(166,142);
-    ctx.lineTo(139,175);
-    ctx.lineTo(164,178);
-    ctx.lineTo(175,144);
-    ctx.fill()
-}
-function dibujaPiernaDer(ctx){
-    ctx.beginPath();
-    ctx.moveTo(178,145);
-    ctx.lineTo(193,178);
-    ctx.lineTo(212,170);
-    ctx.lineTo(188,142);
-    ctx.fill()
+    var canvas = document.getElementById("canv");
+    canvas.width = 500;
+    canvas.height = 350;
+
+    var contexto = canvas.getContext("2d");
+    hombre = new Ahorcado(contexto);
+
+    // Convierte a mayuscula la palabra: toUpperCase(); y minuscula: toLowerCase();
+    palabra = palabra.toUpperCase();
+
+    // Declaro un array con n espacios de acuerdo al largo de la palabra
+    espacio = new Array(palabra.length);
+
+    // Agregamos una funcion que se dispare al dar click al boton
+
+    b.onclick = agregarLetra;
+
+    mostrarPista(espacio);
 }
 
-var numFallos = 0;
-function dibujaAhorcado(numerrores){
-    var contexto = cargaContextoCanvas('canvasahorcado');
-    if(contexto){
-        dibujaHorca(contexto);
-        if(numFallos>0){
-            dibujaCabeza(contexto)
-        }
-        contexto.fillStyle = #1f3e18;
-        if(numFallos>1){
-            dibujaCuerpo(contexto)
-        }
-        if(numFallos>2){
-            dibujaBrazoIzq(contexto)
-        }
-        if(numFallos>3){
-            dibujaBrazoDer(contexto)
-        }
-        if(numFallos>4){
-            dibujaPiernaIzq(contexto)
-        }
-        if(numFallos>5){
-            dibujaPiernaDer(contexto)
-        }
+function agregarLetra()
+{
+    var letra = l.value;
+    l.value = "";
+    mostrarPalabra(palabra, hombre, letra);
+}
 
+function mostrarPalabra (palabra, ahorcado, letra)
+{
+    var encontrado = false;
+    var p;
+    letra = letra.toUpperCase();
+    for(p in palabra)
+    {
+        if(letra == palabra[p])
+        {
+            espacio[p] = letra;
+            encontrado = true;
+        }
+    }
+    mostrarPista(espacio);
+
+
+    // Si No lo encontre...
+    if(!encontrado)
+    {
+        ahorcado.trazar();
+    }
+    if(!ahorcado.vivo)
+    {
+        alert(palabra);
+        document.write("<p>Perdiste!\nRecarga la pagina para jugar de nuevo </p>" + "\nLa palabra correcta era: " + palabra);
     }
 }
 
+if(palabra)
 
+    function mostrarPista(espacio)
+    {
+        var pista = document.getElementById("pista");
+        var texto = "";
+        var i;
+        var largo = espacio.length;
 
-
+        for(i = 0; i < largo; i++)
+        {
+            if(espacio[i] != undefined)
+            {
+                texto = texto + espacio[i] + " ";
+            }
+            else
+            {
+                texto += "_ ";
+            }
+        }
+        pista.innerText = texto;
+    }

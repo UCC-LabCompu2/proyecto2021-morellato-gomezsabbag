@@ -9,8 +9,7 @@
     <link rel="stylesheet" href="miestilo_Ahorcado.css">
     <link rel="shortcut icon" href="imagenes/hangmanrosa.png">
     <script type="text/javascript" src="AhorcadoFunciones.js"></script>
-    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
-    <script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js"></script>
+
 </head>
 <header>
     <h4>JUEGO<br> DEL AHORCADO</h4>
@@ -20,21 +19,24 @@
     <h5>
         <label for="cat"> ELEGISTE: </label><input id="cat" type="text" name="elecc" disabled >
     </h5>
-        <div id="dibujoAhorcado">
-            <canvas id="canvasAhorcado" class="can" width="520" height="450">
-                El Ahorcado sólo funciona en navegadores que soporten Canvas.
-            </canvas>
-        </div>
-        <div id="letras">
-            <canvas id="canvasAhorcado" class="can" width="520" height="450">
-                El Ahorcado sólo funciona en navegadores que soporten Canvas.
-            </canvas>
-        </div>
-        <div id="botonesletras">
-        </div>
-    <h2>
-        <button id="boton" type="reset" class="prim" onclick="java:window.location.reload();">¡VOLVER A JUGAR!</button>
-    </h2>
+    <h7>Adivina la Palabra, Introduce una letra</h7>
+    <p>
+        <h5>Elige una letra:<br>
+        <label><input type="text" id="letra" /></label>
+        <label><input type="button" id="boton" value="Boom!!" /></label>
+</h5>
+    <div>
+    <h2 class="prim" id="pista">_ _ _</h2>
+    <canvas id="canv">
+
+    </canvas>
+    <script type=text/javascript>
+        iniciar();
+    </script>
+    </div>
+        <div>
+        <button id="boton4" type="reset" class="prim" onclick="java:window.location.reload();">¡VOLVER A JUGAR!</button>
+    </div>
     <div class="boton1">
         <a href="index.html">
             <button type="button"><h6>VOLVER AL INICIO</h6></button>

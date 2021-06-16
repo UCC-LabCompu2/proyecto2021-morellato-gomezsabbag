@@ -17,22 +17,29 @@ h4 {
 h2 {
     color: #dec83b;
     font-size: 30px;
-    text-align: center;
+    text-align: left;
     margin-top: 20px;
 
+}
+
+h7{
+    color: #dec83b;
+    font-size: 30px;
+    text-align: right;
+    margin-top: 20px;
 }
 h6 {
     color: #dec83b;
     font-size: 10px;
     text-align: center;
-    margin-top: 5px;
 
 }
 h3 {
-    color: #005aa5;
+    color: #ea5e1d;
     font-size: 30px;
-    text-align: center;
-    margin-top: 45px;
+    text-align: right;
+    margin-right: 220px;
+    margin-top: 145px;
 }
 h5{
     color: #f2f3f5;
