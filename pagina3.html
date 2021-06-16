@@ -9,37 +9,37 @@
     <link rel="stylesheet" href="miestilo_Ahorcado.css">
     <link rel="shortcut icon" href="imagenes/hangmanrosa.png">
     <script type="text/javascript" src="AhorcadoFunciones.js"></script>
+    <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.1.custom.min.js"></script>
 </head>
 <header>
     <h4>JUEGO<br> DEL AHORCADO</h4>
 </header>
 <body class="body3" >
-
 <section>
     <h5>
-            <label for="cat"> ELEGISTE: </label><input id="cat" type="text" name="elecc" disabled >
+        <label for="cat"> ELEGISTE: </label><input id="cat" type="text" name="elecc" disabled >
     </h5>
-    <h5>
-    <div class="letras">
-        <label for="Ingreseunaletra">INGRESE UNA LETRA: </label><input type="text" name="letra" id="Ingreseunaletra" onchange="comprobar()">
-        <h2>
-            <button type="button" class="prim" onclick="dibujarahorca()">¡COMPROBAR!</button>
-            <canvas id="palabra" class="can" width="500px" height="100px">
-                Su navegador no soporta html 5.
+        <div id="dibujoAhorcado">
+            <canvas id="canvasAhorcado" class="can" width="520" height="450">
+                El Ahorcado sólo funciona en navegadores que soporten Canvas.
             </canvas>
-        </h2>
-    </div>
-        <canvas id="Mycanvas" class="can" width="500px" height="300px">
-         Su navegador no soporta html 5.
-        </canvas>
-    </h5>
+        </div>
+        <div id="letras">
+            <canvas id="canvasAhorcado" class="can" width="520" height="450">
+                El Ahorcado sólo funciona en navegadores que soporten Canvas.
+            </canvas>
+        </div>
+        <div id="botonesletras">
+        </div>
+    <h2>
+        <button id="boton" type="reset" class="prim" onclick="java:window.location.reload();">¡VOLVER A JUGAR!</button>
+    </h2>
     <div class="boton1">
         <a href="index.html">
             <button type="button"><h6>VOLVER AL INICIO</h6></button>
         </a>
     </div>
-
 </section>
-
 </body>
 </html>
