@@ -1,6 +1,6 @@
 /**
  * Juego del Ahorcado.
- * @method Ahorcado - declaracion de la clase ahorcado
+
  * @method Ahorcado.prototype - imagenes para usar en el canvas segun los aciertos o errores
  * @method DibujoPost - coloca la imagen de la base/poste.
  * @method DibujoCab - coloca la imagen de la cabeza.
@@ -14,13 +14,20 @@
  * @method iniciar - inicializa el canvas.
  * @method mostrarPalabra - muestra las pistas (letras que ya se adivinaron)
  * @method mostrarPista - convierte la palabra secreta en guiones (-)
+ * @method ChequearGana - chequea si gano
  * @param  {this}  - variables locales de la clase
  * @param {string} palabra - El valor de los inputs de cantidad de letras.
  * @return
  */
 
 var palabra = ["Caballo", "Barco", "Terremoto", "Cocinar", "Avalancha", "Gobierno", "Robot", "Ordenador", "Flores"];
+var animales = ["Caballo", "Perro", "Cabra", "Gato", "Tortuga", "Jirafa"];
+var objetos =["Escoba", "Maceta", "Silla", "Cafetera", "Portones", "Lapiz"];
+var paises =["Argentina", "Brazil", "Chile", "Canada", "Italia", "Japon", "Grecia"];
+var comidas=["Manzana", "Sandwich", "Pizza", "Pasta", "Langosta", "Ensalada"];
+
 var aleatorio =  [Math.floor(Math.random() * palabra.length)];
+
 var palabra = palabra[aleatorio];
 
 var hombre, l, espacio;
@@ -149,6 +156,7 @@ Ahorcado.prototype.trazar = function()
 
 function iniciar()
 {
+
     l = document.getElementById("letra");
     var b = document.getElementById("boton");
 
@@ -170,6 +178,8 @@ function iniciar()
     b.onclick = agregarLetra;
 
     mostrarPista(espacio);
+
+
 }
 
 function agregarLetra()
@@ -177,12 +187,15 @@ function agregarLetra()
     var letra = l.value;
     l.value = "";
     mostrarPalabra(palabra, hombre, letra);
+
+
 }
 
 function mostrarPalabra (palabra, ahorcado, letra)
 {
     var encontrado = false;
     var p;
+    var cont=0, cont2=0;
     letra = letra.toUpperCase();
     for(p in palabra)
     {
@@ -190,12 +203,11 @@ function mostrarPalabra (palabra, ahorcado, letra)
         {
             espacio[p] = letra;
             encontrado = true;
+
         }
     }
     mostrarPista(espacio);
 
-
-    // Si No se encuentra la letra
     if(!encontrado)
     {
         ahorcado.trazar();
@@ -205,9 +217,18 @@ function mostrarPalabra (palabra, ahorcado, letra)
         alert(palabra);
         document.write("<p>Perdiste!\nRecarga la pagina para jugar de nuevo </p>" + "\nLa palabra correcta era: " + palabra);
     }
-}
+   for(p in palabra) {
+    if (espacio[p] == palabra[p]) {
+        cont++;
+        }
+    cont2++;
+    }
+    if(cont==cont2){
+        alert("SI!! ERA -> " + palabra);
+        document.write("<p>GANASTE FELICITACIONES!\nRecarga la pagina para jugar de nuevo </p>");
+    }
 
-if(palabra)
+}
 
     function mostrarPista(espacio)
     {
@@ -229,3 +250,4 @@ if(palabra)
         }
         pista.innerText = texto;
     }
+
