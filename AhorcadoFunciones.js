@@ -32,6 +32,38 @@ var palabra = palabra[aleatorio];
 
 var hombre, l, espacio;
 
+/*var animales = ["Caballo", "Perro", "Cabra", "Gato", "Tortuga", "Jirafa"];
+var objetos =["Escoba", "Maceta", "Silla", "Cafetera", "Portones", "Lapiz"];
+var paises =["Argentina", "Brazil", "Chile", "Canada", "Italia", "Japon", "Grecia"];
+var comidas=["Manzana", "Sandwich", "Pizza", "Pasta", "Langosta", "Ensalada"];
+
+var hombre, l, espacio;
+strc
+
+function Elegir(){
+    if(value=="animales") {
+        var aleatorio =  [Math.floor(Math.random() * animales.length)];
+
+        var palabra = animales[aleatorio];
+    }
+    if(value=="objetos") {
+        var aleatorio =  [Math.floor(Math.random() * objetos.length)];
+
+        var palabra = objetos[aleatorio];
+    }
+    if(value=="paises") {
+        var aleatorio =  [Math.floor(Math.random() * paises.length)];
+
+        var palabra = paises[aleatorio];
+    }
+    if(value=="comidas") {
+        var aleatorio =  [Math.floor(Math.random() * comidas.length)];
+
+        var palabra = comidas[aleatorio];
+    }
+
+}*/
+
 var Ahorcado = function(con)
 {
 
