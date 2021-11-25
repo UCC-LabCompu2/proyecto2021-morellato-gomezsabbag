@@ -1,22 +1,6 @@
 /**
  * Juego del Ahorcado.
-
- * @method Ahorcado.prototype - imagenes para usar en el canvas segun los aciertos o errores
- * @method DibujoPost - coloca la imagen de la base/poste.
- * @method DibujoCab - coloca la imagen de la cabeza.
- * @method Dibujocuerp - coloca la imagen del cuerpo.
- * @method DibujoBrazoDer - coloca la imagen del brazo derecho.
- * @method DibujoBrazoIzq - coloca la imagen del brazo izq.
- * @method DibujoPiernaDer - coloca la imagen de la pierna derecha.
- * @method DibujoPiernaIzq - coloca la imagen de la pierna izq.
- * @method Ahorcado.prototype.trazar - interfiere en cuando es un error y cuando no.
- * @method agregarLetra - funcion para introducir las letras
- * @method iniciar - inicializa el canvas.
- * @method mostrarPalabra - muestra las pistas (letras que ya se adivinaron)
- * @method mostrarPista - convierte la palabra secreta en guiones (-)
- * @method ChequearGana - chequea si gano
  * @param  {this}  - variables locales de la clase
- * @param {string} palabra - El valor de los inputs de cantidad de letras.
  * @return
  */
 
@@ -32,14 +16,7 @@ var palabra = palabra[aleatorio];
 
 var hombre, l, espacio;
 
-/*var animales = ["Caballo", "Perro", "Cabra", "Gato", "Tortuga", "Jirafa"];
-var objetos =["Escoba", "Maceta", "Silla", "Cafetera", "Portones", "Lapiz"];
-var paises =["Argentina", "Brazil", "Chile", "Canada", "Italia", "Japon", "Grecia"];
-var comidas=["Manzana", "Sandwich", "Pizza", "Pasta", "Langosta", "Ensalada"];
-
-var hombre, l, espacio;
-strc
-
+/*
 function Elegir(){
     if(value=="animales") {
         var aleatorio =  [Math.floor(Math.random() * animales.length)];
@@ -63,7 +40,11 @@ function Elegir(){
     }
 
 }*/
-
+/**
+ * @method Ahorcado.prototype - imagenes para usar en el canvas segun los aciertos o errores
+ * @param con
+ * @constructor
+ */
 var Ahorcado = function(con)
 {
 
@@ -175,16 +156,23 @@ Ahorcado.prototype.dibujar = function()
     }
 }
 
+/**
+ *  @method Ahorcado.prototype.trazar - interfiere en cuando es un error y cuando no para mantener vivo o matar al muñeco.
+ */
 Ahorcado.prototype.trazar = function()
 {
     this.intentos++;
     if(this.intentos == this.maximo)
     {
         this.vivo = false;
-
     }
     this.dibujar();
 }
+
+/**
+ * @method iniciar - inicializa el canvas.
+ * @param sin parametros
+ */
 
 function iniciar()
 {
@@ -214,15 +202,25 @@ function iniciar()
 
 }
 
+/**
+ *  @method agregarLetra - funcion para introducir las letras
+ */
+
 function agregarLetra()
 {
     var letra = l.value;
     l.value = "";
     mostrarPalabra(palabra, hombre, letra);
-
-
 }
 
+
+/**
+ * * @method mostrarPalabra - muestra las pistas (letras que ya se adivinaron)
+ * @param palabra valor de la palabra a adivinar
+ * @param ahorcado dibujo del canvas para comparar si se acabaron los intentos o no
+ * @param letra caracter ingresado por tecldo, para compararlo con los caracteres de la palabra
+ * @constructor
+ */
 function mostrarPalabra (palabra, ahorcado, letra)
 {
     var encontrado = false;
@@ -261,7 +259,11 @@ function mostrarPalabra (palabra, ahorcado, letra)
     }
 
 }
-
+/**
+ * @method mostrarPista - convierte la palabra secreta en guiones (-)
+ * @param espacio convertir en guiones las letras de la palabra, vector de letras con las que se forma la palabra
+ * @constructor
+ */
     function mostrarPista(espacio)
     {
         var pista = document.getElementById("pista");
