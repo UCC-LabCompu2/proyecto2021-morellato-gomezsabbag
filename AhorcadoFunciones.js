@@ -4,42 +4,48 @@
  * @return
  */
 
-var palabra = ["Caballo", "Barco", "Terremoto", "Cocinar", "Avalancha", "Gobierno", "Robot", "Ordenador", "Flores"];
+var palabra=["Caballo", "Perro", "Cabra", "Gato", "Tortuga", "Jirafa","Escoba", "Maceta", "Silla", "Cafetera", "Portones", "Lapiz","Argentina", "Brazil", "Chile", "Canada", "Italia", "Japon", "Grecia","Manzana", "Sandwich", "Pizza", "Pasta", "Langosta", "Ensalada"];
 var animales = ["Caballo", "Perro", "Cabra", "Gato", "Tortuga", "Jirafa"];
 var objetos =["Escoba", "Maceta", "Silla", "Cafetera", "Portones", "Lapiz"];
 var paises =["Argentina", "Brazil", "Chile", "Canada", "Italia", "Japon", "Grecia"];
 var comidas=["Manzana", "Sandwich", "Pizza", "Pasta", "Langosta", "Ensalada"];
 
-var aleatorio =  [Math.floor(Math.random() * palabra.length)];
+//var aleatorio =  [Math.floor(Math.random() * palabra.length)];
 
-var palabra = palabra[aleatorio];
+//var palabra = palabra[aleatorio];
 
 var hombre, l, espacio;
 
-/*
-function Elegir(){
-    if(value=="animales") {
+
+function Elegir(catalogo, cantidadlet){
+
+    if(catalogo=="animales") {
         var aleatorio =  [Math.floor(Math.random() * animales.length)];
 
-        var palabra = animales[aleatorio];
+        animales = animales[Math.floor(Math.random() * animales.length)];
+        palabra=animales;
+
     }
-    if(value=="objetos") {
+    if(catalogo=="objetos") {
         var aleatorio =  [Math.floor(Math.random() * objetos.length)];
 
-        var palabra = objetos[aleatorio];
+        objetos = objetos[Math.floor(Math.random() * animales.length)];
+        palabra=objetos;
     }
-    if(value=="paises") {
+    if(catalogo=="paises") {
         var aleatorio =  [Math.floor(Math.random() * paises.length)];
 
-        var palabra = paises[aleatorio];
+        paises = paises[Math.floor(Math.random() * animales.length)];
+        palabra=paises;
     }
-    if(value=="comidas") {
+    if(catalogo=="comida") {
         var aleatorio =  [Math.floor(Math.random() * comidas.length)];
 
-        var palabra = comidas[aleatorio];
+        comidas = comidas[Math.floor(Math.random() * animales.length)];
+        palabra=comidas;
     }
 
-}*/
+}
 /**
  * @method Ahorcado.prototype - imagenes para usar en el canvas segun los aciertos o errores
  * @param con
@@ -55,7 +61,7 @@ var Ahorcado = function(con)
 
     this.dibujar();
 }
-Ahorcado.prototype.dibujar = function()
+Ahorcado.prototype.dibujar = function(gano)
 {
 
     var dibujar = this.contexto;
@@ -70,6 +76,20 @@ Ahorcado.prototype.dibujar = function()
         dibujar.drawImage(dibujar.poste, 100, 0);
     }
     dibujar.closePath();
+
+    if(gano){
+        // Gano
+        dibujar.beginPath();
+        dibujar.salvado = new Image();
+        dibujar.salvado.src = "imagenes/salvado.png";
+        dibujar.salvado.onload=dibujoSalvado();
+
+        function dibujoSalvado()
+        {
+            dibujar.drawImage(dibujar.salvado, 100, 0)
+        }
+        dibujar.closePath();
+    }
 
     if(this.intentos > 0)
     {
@@ -140,12 +160,13 @@ Ahorcado.prototype.dibujar = function()
                         {
                             // Pierna 2
                             dibujar.beginPath();
-                            dibujar.pierna2 = new Image();
-                            dibujar.pierna2.src = "imagenes/pierna2.png";
-                            dibujar.pierna2.onload = dibujoPiernaIzq;
-                            function dibujoPiernaIzq()
+                            dibujar.murio = new Image();
+                            dibujar.murio.src = "imagenes/murio.png";
+                            dibujar.murio.onload=dibujoMurio();
+
+                            function dibujoMurio()
                             {
-                                dibujar.drawImage(dibujar.pierna2, 100, 0);
+                                dibujar.drawImage(dibujar.murio, 100, 0)
                             }
                             dibujar.closePath();
                         }
@@ -180,6 +201,9 @@ function iniciar()
     l = document.getElementById("letra");
     var b = document.getElementById("boton");
 
+    var catalogo=localStorage.getItem("catalogo");
+    var cantidadlet=localStorage.getItem("cantidadlet");
+
     var canvas = document.getElementById("canv");
     canvas.width = 500;
     canvas.height = 350;
@@ -187,6 +211,7 @@ function iniciar()
     var contexto = canvas.getContext("2d");
     hombre = new Ahorcado(contexto);
 
+    Elegir(catalogo, cantidadlet);
     // Convierte a mayuscula la palabra: toUpperCase(); y minuscula: toLowerCase();
     palabra = palabra.toUpperCase();
 
@@ -223,6 +248,7 @@ function agregarLetra()
  */
 function mostrarPalabra (palabra, ahorcado, letra)
 {
+    var gano = false;
     var encontrado = false;
     var p;
     var cont=0, cont2=0;
@@ -254,11 +280,30 @@ function mostrarPalabra (palabra, ahorcado, letra)
     cont2++;
     }
     if(cont==cont2){
-        alert("SI!! ERA -> " + palabra);
-        document.write("<p>GANASTE FELICITACIONES!\nRecarga la pagina para jugar de nuevo </p>");
+        gano= true;
+
+       // if (cont>cont2) {
+            //alert("SI!! ERA -> " + palabra);
+            //document.write("<p>GANASTE FELICITACIONES!\nRecarga la pagina para jugar de nuevo </p>");
+        //}
+        //cont++;
     }
 
 }
+
+function cargarWeb(){
+    var catalogo=document.getElementById('categ').value;
+    var cantidadlet=document.getElementById('cantpalabras').value;
+
+    localStorage.setItem("catalogo", catalogo);
+    localStorage.setItem("cantidadlet", cantidadlet);
+
+    window.open("pagina3.html");
+
+}
+
+
+
 /**
  * @method mostrarPista - convierte la palabra secreta en guiones (-)
  * @param espacio convertir en guiones las letras de la palabra, vector de letras con las que se forma la palabra
