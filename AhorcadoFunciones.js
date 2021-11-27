@@ -4,11 +4,11 @@
  * @return
  */
 
-var palabra=["Caballo", "Perro", "Cabra", "Gato", "Tortuga", "Jirafa","Escoba", "Maceta", "Silla", "Cafetera", "Portones", "Lapiz","Argentina", "Brazil", "Chile", "Canada", "Italia", "Japon", "Grecia","Manzana", "Sandwich", "Pizza", "Pasta", "Langosta", "Ensalada"];
-var animales = ["Caballo", "Perro", "Cabra", "Gato", "Tortuga", "Jirafa"];
-var objetos =["Escoba", "Maceta", "Silla", "Cafetera", "Portones", "Lapiz"];
+var palabra;
+var animales = ["Caballo","Rinocero", "Perro", "Cabra", "Gato", "Tortuga", "Jirafa"];
+var objetos =["Escoba", "Maceta", "Silla", "Cafetera", "Portones", "Lapiz", "Escritorio"];
 var paises =["Argentina", "Brazil", "Chile", "Canada", "Italia", "Japon", "Grecia"];
-var comidas=["Manzana", "Sandwich", "Pizza", "Pasta", "Langosta", "Ensalada"];
+var comidas=["Manzana", "Sandwich", "Pizza", "Pasta", "Langosta", "Ensalada", "Asado"];
 
 //var aleatorio =  [Math.floor(Math.random() * palabra.length)];
 
@@ -19,30 +19,129 @@ var hombre, l, espacio;
 
 function Elegir(catalogo, cantidadlet){
 
-    if(catalogo=="animales") {
-        var aleatorio =  [Math.floor(Math.random() * animales.length)];
+    var largo;
+    var i;
 
-        animales = animales[Math.floor(Math.random() * animales.length)];
-        palabra=animales;
+
+    if(catalogo=="animales") {
+            if(cantidadlet==4){
+                animales=["Gato", "Foca", "Orca", "Leon"]
+                animales=animales[Math.floor(Math.random() * animales.length)];
+                palabra=animales;
+            }
+        if(cantidadlet==5){
+            animales=["Perro", "Mosca", "Tigre"]
+            animales=animales[Math.floor(Math.random() * animales.length)];
+            palabra=animales;
+        }
+        if(cantidadlet==6){
+            animales=["Jirafa", "Cebras", "Pajaro"]
+            animales=animales[Math.floor(Math.random() * animales.length)];
+            palabra=animales;
+        }
+        if(cantidadlet==7){
+
+            animales=["Tortuga", "Ballena", "Tiburon"]
+            animales=animales[Math.floor(Math.random() * animales.length)];
+            palabra=animales;
+        }
+        if(cantidadlet==8){
+
+            animales=["Elefante", "Caballos", "Langosta"]
+            animales=animales[Math.floor(Math.random() * animales.length)];
+            palabra=animales;
+        }
 
     }
-    if(catalogo=="objetos") {
-        var aleatorio =  [Math.floor(Math.random() * objetos.length)];
 
-        objetos = objetos[Math.floor(Math.random() * animales.length)];
-        palabra=objetos;
+    if(catalogo=="objetos") {
+        if(cantidadlet==4){
+            objetos=["Foco", "Vaso", "Mesa", "Goma"]
+            objetos=objetos[Math.floor(Math.random() * objetos.length)];
+            palabra=objetos;
+        }
+        if(cantidadlet==5){
+            objetos=["Silla", "Termo", "Regla"]
+            objetos=objetos[Math.floor(Math.random() * objetos.length)];
+            palabra=objetos;
+        }
+        if(cantidadlet==6){
+            objetos=["Puerta", "Jarron", "Porton", "Camion"]
+            objetos=objetos[Math.floor(Math.random() * objetos.length)];
+            palabra=objetos;
+        }
+        if(cantidadlet==7){
+
+            objetos=["Palmera", "Remeras", "Cartera", "Lampara"]
+            objetos=objetos[Math.floor(Math.random() * objetos.length)];
+            palabra=objetos;
+        }
+        if(cantidadlet==8){
+
+            objetos=["Acordeon", "Hospital", "Serrucho", "Escalera"]
+            objetos=objetos[Math.floor(Math.random() * objetos.length)];
+            palabra=objetos;
+        }
     }
     if(catalogo=="paises") {
-        var aleatorio =  [Math.floor(Math.random() * paises.length)];
 
-        paises = paises[Math.floor(Math.random() * animales.length)];
-        palabra=paises;
+        if(cantidadlet==4){
+            paises=["Peru", "Irak", "Mali", "Cuba"]
+            paises=paises[Math.floor(Math.random() * paises.length)];
+            palabra=paises;
+        }
+        if(cantidadlet==5){
+            paises=["Suiza", "Chile", "Japon", "China"]
+            paises=paises[Math.floor(Math.random() * paises.length)];
+            palabra=paises;
+        }
+        if(cantidadlet==6){
+            paises=["España", "Brasil", "Egipto", "Canada", "Monaco"]
+            paises=paises[Math.floor(Math.random() * paises.length)];
+            palabra=paises;
+        }
+        if(cantidadlet==7){
+
+            paises=["Croacia", "Austria", "Bolivia", "Ucrania"]
+            paises=paises[Math.floor(Math.random() * paises.length)];
+            palabra=paises;
+        }
+        if(cantidadlet==8){
+
+            paises=["Alemania", "Paraguay", "Colombia", "Honduras"]
+            paises=paises[Math.floor(Math.random() * paises.length)];
+            palabra=paises;
+        }
     }
     if(catalogo=="comida") {
-        var aleatorio =  [Math.floor(Math.random() * comidas.length)];
 
-        comidas = comidas[Math.floor(Math.random() * animales.length)];
-        palabra=comidas;
+        if(cantidadlet==4){
+            comidas=["Papa", "Atun", "Uvas", "Pera"]
+            comidas=comidas[Math.floor(Math.random() * comidas.length)];
+            palabra=comidas;
+        }
+        if(cantidadlet==5){
+            comidas=["Arroz", "Carne", "Huevo", "Sushi"]
+            comidas=comidas[Math.floor(Math.random() * comidas.length)];
+            palabra=comidas;
+        }
+        if(cantidadlet==6){
+            comidas=["Salmon", "Quesos", "Banana", "Paella"]
+            comidas=comidas[Math.floor(Math.random() * comidas.length)];
+            palabra=comidas;
+        }
+        if(cantidadlet==7){
+
+            comidas=["Tostada", "Churros", "Granola", "Oregano"]
+            comidas=comidas[Math.floor(Math.random() * comidas.length)];
+            palabra=comidas;
+        }
+        if(cantidadlet==8){
+
+            comidas=["Caramelo", "Gelatina", "Maracuya", "Tortilla"]
+            comidas=comidas[Math.floor(Math.random() * comidas.length)];
+            palabra=comidas;
+        }
     }
 
 }
@@ -61,7 +160,7 @@ var Ahorcado = function(con)
 
     this.dibujar();
 }
-Ahorcado.prototype.dibujar = function(gano)
+Ahorcado.prototype.dibujar = function()
 {
 
     var dibujar = this.contexto;
@@ -77,7 +176,7 @@ Ahorcado.prototype.dibujar = function(gano)
     }
     dibujar.closePath();
 
-    if(gano){
+    /*if(ganador==true){
         // Gano
         dibujar.beginPath();
         dibujar.salvado = new Image();
@@ -89,7 +188,7 @@ Ahorcado.prototype.dibujar = function(gano)
             dibujar.drawImage(dibujar.salvado, 100, 0)
         }
         dibujar.closePath();
-    }
+    }*/
 
     if(this.intentos > 0)
     {
@@ -143,32 +242,47 @@ Ahorcado.prototype.dibujar = function(gano)
                     }
                     dibujar.closePath();
 
-                    if(this.intentos > 4)
-                    {
+                    if(this.intentos > 4) {
                         // Pierna 1
                         dibujar.beginPath();
                         dibujar.pierna1 = new Image();
                         dibujar.pierna1.src = "imagenes/pierna1.png";
                         dibujar.pierna1.onload = dibujoPiernaDer;
-                        function dibujoPiernaDer()
-                        {
+
+                        function dibujoPiernaDer() {
                             dibujar.drawImage(dibujar.pierna1, 100, 0);
                         }
+
                         dibujar.closePath();
 
-                        if(this.intentos > 5)
-                        {
+
+                        if(this.intentos > 5) {
                             // Pierna 2
                             dibujar.beginPath();
-                            dibujar.murio = new Image();
-                            dibujar.murio.src = "imagenes/murio.png";
-                            dibujar.murio.onload=dibujoMurio();
+                            dibujar.pierna2 = new Image();
+                            dibujar.pierna2.src = "imagenes/murio.png";
+                            dibujar.pierna2.onload = dibujoPiernaIzq;
 
-                            function dibujoMurio()
-                            {
-                                dibujar.drawImage(dibujar.murio, 100, 0)
+                            function dibujoPiernaIzq() {
+                                dibujar.drawImage(dibujar.pierna2, 100, 0);
                             }
+
                             dibujar.closePath();
+
+                            /*if(this.intentos == 7) {
+                                // MURIO
+                                dibujar.beginPath();
+                                dibujar.muerto = new Image();
+                                dibujar.muerto.src = "imagenes/murio.png";
+                                dibujar.muerto.onload = dibujoAhorcado;
+
+                                function dibujoAhorcado() {
+                                    dibujar.drawImage(dibujar.muerto, 100, 0);
+                                }
+
+                                dibujar.closePath();
+
+                            }*/
                         }
                     }
                 }
@@ -248,7 +362,7 @@ function agregarLetra()
  */
 function mostrarPalabra (palabra, ahorcado, letra)
 {
-    var gano = false;
+
     var encontrado = false;
     var p;
     var cont=0, cont2=0;
@@ -270,7 +384,7 @@ function mostrarPalabra (palabra, ahorcado, letra)
     }
     if(!ahorcado.vivo)
     {
-        alert(palabra);
+        alert("NO! PERDISTE ERA:" + palabra);
         document.write("<p>Perdiste!\nRecarga la pagina para jugar de nuevo </p>" + "\nLa palabra correcta era: " + palabra);
     }
    for(p in palabra) {
@@ -280,13 +394,8 @@ function mostrarPalabra (palabra, ahorcado, letra)
     cont2++;
     }
     if(cont==cont2){
-        gano= true;
-
-       // if (cont>cont2) {
-            //alert("SI!! ERA -> " + palabra);
-            //document.write("<p>GANASTE FELICITACIONES!\nRecarga la pagina para jugar de nuevo </p>");
-        //}
-        //cont++;
+            alert("SI!! ES: " + palabra);
+            document.write("<p>GANASTE FELICITACIONES!\nRecarga la pagina para jugar de nuevo </p>");
     }
 
 }
