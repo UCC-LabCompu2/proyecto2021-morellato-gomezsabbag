@@ -78,7 +78,7 @@ function Elegir(catalogo, cantidadlet){
         }
         if(cantidadlet==8){
 
-            objetos=["Acordeon", "Hospital", "Serrucho", "Escalera"]
+            objetos=["Acordeon", "Rallador", "Serrucho", "Escalera"]
             objetos=objetos[Math.floor(Math.random() * objetos.length)];
             palabra=objetos;
         }

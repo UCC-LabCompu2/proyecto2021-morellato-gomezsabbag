@@ -55,6 +55,13 @@ h5{
     border: medium solid #e2933c;
 }
 
+.tercero {
+    color: #e2933c;
+    font-size: 20px;
+    text-shadow: 2px 2px #e20e69;
+    border: medium solid #db1543;
+}
+
 .prim {
     color: rgba(60, 88, 226, 0.77);
     font-size: 30px;
