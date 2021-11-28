@@ -14,7 +14,7 @@ var comidas=["Manzana", "Sandwich", "Pizza", "Pasta", "Langosta", "Ensalada", "A
 
 //var palabra = palabra[aleatorio];
 
-var hombre, l, espacio;
+var hombre, l, espacio, mostrarInteno;
 
 
 function Elegir(catalogo, cantidadlet){
@@ -157,8 +157,8 @@ var Ahorcado = function(con)
     this.maximo = 7;
     this.intentos = 0;
     this.vivo = true;
-
     this.dibujar();
+
 }
 Ahorcado.prototype.dibujar = function()
 {
@@ -166,130 +166,98 @@ Ahorcado.prototype.dibujar = function()
     var dibujar = this.contexto;
 
     // Poste
-    dibujar.beginPath();
-    dibujar.poste = new Image();
-    dibujar.poste.src = "imagenes/base.png";
-    dibujar.poste.onload = dibujoPost;
-    function dibujoPost()
-    {
-        dibujar.drawImage(dibujar.poste, 100, 0);
-    }
+    dibujar.moveTo(150,100);
+    dibujar.lineTo(150,50);
+    dibujar.lineTo(400,50);
+    dibujar.lineTo(400,350);
+    dibujar.lineWidth = 5;
+    dibujar.strokeStyle = "blue";
+    dibujar.stroke();
     dibujar.closePath();
-
-    /*if(ganador==true){
-        // Gano
-        dibujar.beginPath();
-        dibujar.salvado = new Image();
-        dibujar.salvado.src = "imagenes/salvado.png";
-        dibujar.salvado.onload=dibujoSalvado();
-
-        function dibujoSalvado()
-        {
-            dibujar.drawImage(dibujar.salvado, 100, 0)
-        }
-        dibujar.closePath();
-    }*/
 
     if(this.intentos > 0)
     {
         // Cabeza
         dibujar.beginPath();
-        dibujar.cabeza = new Image();
-        dibujar.cabeza.src = "imagenes/cabeza.png";
-        dibujar.cabeza.onload = dibujoCab;
-        function dibujoCab()
-        {
-            dibujar.drawImage(dibujar.cabeza, 100, 0);
-        }
+        dibujar.arc(150, 140, 40, 0,Math.PI*2, false);
+        dibujar.strokeStyle="blue";
+        dibujar.lineWidth=2;
+        dibujar.stroke();
         dibujar.closePath();
+
 
         if(this.intentos > 1)
         {
             // Cuerpo
             dibujar.beginPath();
-            dibujar.cuerpo = new Image();
-            dibujar.cuerpo.src = "imagenes/cuerpo.png";
-            dibujar.cuerpo.onload = dibujoCuerp;
-            function dibujoCuerp()
-            {
-                dibujar.drawImage(dibujar.cuerpo, 100, 0);
-            }
+            dibujar.moveTo(150, 180);
+            dibujar.lineTo(150, 250);
+            dibujar.strokeStyle= "blue";
+            dibujar.lineWidth=2;
+            dibujar.stroke();
+
             dibujar.closePath();
 
             if(this.intentos > 2)
             {
                 // Brazo 1
                 dibujar.beginPath();
-                dibujar.brazo1 = new Image();
-                dibujar.brazo1.src = "imagenes/brazo1.png";
-                dibujar.brazo1.onload = dibujoBrazoDer;
-                function dibujoBrazoDer()
-                {
-                    dibujar.drawImage(dibujar.brazo1, 100, 0);
-                }
+                dibujar.moveTo(120, 220);
+                dibujar.lineTo(150, 180);
+                dibujar.lineTo(180,220);
+                dibujar.strokeStyle = "blue";
+                dibujar.lineWidth=2;
+                dibujar.stroke();
+
                 dibujar.closePath();
 
                 if(this.intentos > 3)
                 {
                     // Brazo 2
                     dibujar.beginPath();
-                    dibujar.brazo2 = new Image();
-                    dibujar.brazo2.src = "imagenes/brazo2.png";
-                    dibujar.brazo2.onload = dibujoBrazoIzq;
-                    function dibujoBrazoIzq()
-                    {
-                        dibujar.drawImage(dibujar.brazo2, 100, 0);
-                    }
+                    dibujar.moveTo(120, 290);
+                    dibujar.lineTo(150, 250);
+                    dibujar.lineTo(180,290);
+                    dibujar.strokeStyle = "blue";
+                    dibujar.lineWidth=2;
+                    dibujar.stroke();
+
                     dibujar.closePath();
 
                     if(this.intentos > 4) {
                         // Pierna 1
                         dibujar.beginPath();
-                        dibujar.pierna1 = new Image();
-                        dibujar.pierna1.src = "imagenes/pierna1.png";
-                        dibujar.pierna1.onload = dibujoPiernaDer;
+                        dibujar.moveTo(125, 120);
+                        dibujar.lineTo(145,145);
+                        dibujar.lineTo(145,120);
+                        dibujar.lineTo(125,145);
 
-                        function dibujoPiernaDer() {
-                            dibujar.drawImage(dibujar.pierna1, 100, 0);
-                        }
+                        dibujar.moveTo(155, 120);
+                        dibujar.lineTo(175, 145);
+                        dibujar.lineTo(175, 120);
+                        dibujar.lineTo(155, 145);
 
-                        dibujar.closePath();
-
+                        dibujar.strokeStyle = "blue";
+                        dibujar.lineWidth = 2;
+                        dibujar.stroke();
 
                         if(this.intentos > 5) {
-                            // Pierna 2
+
                             dibujar.beginPath();
-                            dibujar.pierna2 = new Image();
-                            dibujar.pierna2.src = "imagenes/murio.png";
-                            dibujar.pierna2.onload = dibujoPiernaIzq;
-
-                            function dibujoPiernaIzq() {
-                                dibujar.drawImage(dibujar.pierna2, 100, 0);
-                            }
-
+                            dibujar.arc(150, 140, 60, 0,Math.PI*2, false);
+                            dibujar.strokeStyle="red";
+                            dibujar.lineWidth=2;
+                            dibujar.stroke();
                             dibujar.closePath();
 
-                            /*if(this.intentos == 7) {
-                                // MURIO
-                                dibujar.beginPath();
-                                dibujar.muerto = new Image();
-                                dibujar.muerto.src = "imagenes/murio.png";
-                                dibujar.muerto.onload = dibujoAhorcado;
-
-                                function dibujoAhorcado() {
-                                    dibujar.drawImage(dibujar.muerto, 100, 0);
-                                }
-
-                                dibujar.closePath();
-
-                            }*/
+                            }
                         }
                     }
                 }
             }
         }
     }
-}
+
 
 /**
  *  @method Ahorcado.prototype.trazar - interfiere en cuando es un error y cuando no para mantener vivo o matar al muñeco.
@@ -302,7 +270,10 @@ Ahorcado.prototype.trazar = function()
         this.vivo = false;
     }
     this.dibujar();
+
+
 }
+
 
 /**
  * @method iniciar - inicializa el canvas.
@@ -373,7 +344,6 @@ function mostrarPalabra (palabra, ahorcado, letra)
         {
             espacio[p] = letra;
             encontrado = true;
-
         }
     }
     mostrarPista(espacio);
@@ -381,6 +351,7 @@ function mostrarPalabra (palabra, ahorcado, letra)
     if(!encontrado)
     {
         ahorcado.trazar();
+
     }
     if(!ahorcado.vivo)
     {
@@ -438,4 +409,25 @@ function cargarWeb(){
         }
         pista.innerText = texto;
     }
+var x=0;
+var dx=2;
+function animarMuneco (posX, posY){
 
+        var canvas = document.getElementById("mycanv");
+        var ctx = canvas.getContext("2d");
+
+        canvas.width =canvas.width;
+
+        var img = new Image();
+        img.src = "imagenes/animado.png";
+
+        img.onload = function (){
+            ctx.drawImage(img, x,100);
+        }
+
+        if (x>canvas.width){
+            x=0;
+        }
+
+        x+=dx;
+}

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <title>Juego del Ahorcado</title>
@@ -16,25 +16,27 @@
 </header>
 <body class="body3" >
 <section>
-
-    <h7>Adivina la Palabra, Introduce una letra</h7>
+    <div id="contenedor">
+    <div id="A">
     <p>
         <h5>Elige una letra:<br>
         <label for="letra"><input type="text" id="letra" maxlength="1" pattern="[A-Z,a-z]"/></label>
-        <label for="boton"><input type="button" id="boton" class="tercero" value="Comprueba!!" /></label>
+        <label for="boton"><input type="button" id="boton" class="terce" value="Comprobar" /></label>
 </h5>
-    <div>
-    <h5 class="prim" id="pista">_ _ _</h5>
+
+    <h5 class="prim" id="pista"> X </h5>
+       <h5> <button id="boton4" type="reset" class="terce" onclick="window.location.reload();">Cambiar Palabra</button></h5>
+    </div>
+    <div id="B">
     <canvas id="canv" class="can" width="800px" height="600px">
     Tu navegador no soporta CANVAS HTML5.
     </canvas>
+    </div>
+    </div>
+
     <script type=text/javascript>
         iniciar();
     </script>
-    </div>
-        <div>
-        <button id="boton4" type="reset" class="segundo" onclick="window.location.reload();">¡Cambiar Palabra!</button>
-    </div>
     <div class="boton1">
         <a href="index.html">
             <button type="button" class="prim">VOLVER AL INICIO</button>

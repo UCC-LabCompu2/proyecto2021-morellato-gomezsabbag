@@ -14,9 +14,9 @@
     <h4>JUEGO <br>DEL AHORCADO</h4>
 </header>
 
-<body class="body3">
+<body class="body3" onload="setInterval(animarMuneco, 10)">
 <section>
-    <div class="categoria"><h5>
+    <div class="categoria"><h8>
 
         <label for="categ">Elije la categoria de palabras:</label><br>
             <select class="select" id="categ">
@@ -28,15 +28,23 @@
 
         <label for="cantpalabras">Elije la cantidad de letras de la palabra:</label><br>
             <input type="number" name="letras" min="4" max="8" id="cantpalabras"><br>
-    </h5><br>
+    </h8><br>
+    </div>
+    <div id="C">
+        <canvas id="mycanv" class="mycan" width="1000px" height="300px">
+            Tu navegador no soporta CANVAS HTML5.
+        </canvas>
+        <script type=text/javascript>
+            iniciar();
+        </script>
     </div>
     <div class="boton">
-            <button type="button" class="prim" onclick="cargarWeb()">¡COMENZAR!</button>
+            <button type="button" class="terce" onclick="cargarWeb()">¡COMENZAR!</button>
     </div>
 </section>
 
 <a href="index.html">
-    <button type="button"><h6>VOLVER AL INICIO</h6></button>
+    <h6><button type="button" class="prim">VOLVER AL INICIO</button></h6>
 </a>
 
 </body>
