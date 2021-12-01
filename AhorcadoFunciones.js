@@ -10,18 +10,16 @@ var objetos =["Escoba", "Maceta", "Silla", "Cafetera", "Portones", "Lapiz", "Esc
 var paises =["Argentina", "Brazil", "Chile", "Canada", "Italia", "Japon", "Grecia"];
 var comidas=["Manzana", "Sandwich", "Pizza", "Pasta", "Langosta", "Ensalada", "Asado"];
 
-//var aleatorio =  [Math.floor(Math.random() * palabra.length)];
 
-//var palabra = palabra[aleatorio];
+var hombre, l, espacio;
 
-var hombre, l, espacio, mostrarInteno;
-
-
+/**
+ * @method Elegir - elige la palabra a adivinar de acuerdo a lo elegido por el usuario
+ * @param catalogo la categoria de palabras q eligio el usuario
+ * @param cantidadlet la cantidad de letras q eligio el usuario
+ * @constructor
+ */
 function Elegir(catalogo, cantidadlet){
-
-    var largo;
-    var i;
-
 
     if(catalogo=="animales") {
             if(cantidadlet==4){
@@ -147,8 +145,7 @@ function Elegir(catalogo, cantidadlet){
 }
 /**
  * @method Ahorcado.prototype - imagenes para usar en el canvas segun los aciertos o errores
- * @param con
- * @constructor
+ * @param con contexto del canvas
  */
 var Ahorcado = function(con)
 {
@@ -160,6 +157,7 @@ var Ahorcado = function(con)
     this.dibujar();
 
 }
+
 Ahorcado.prototype.dibujar = function()
 {
 
@@ -326,7 +324,7 @@ function agregarLetra()
 
 /**
  * * @method mostrarPalabra - muestra las pistas (letras que ya se adivinaron)
- * @param palabra valor de la palabra a adivinar
+ * @param palabra palabra a adivinar
  * @param ahorcado dibujo del canvas para comparar si se acabaron los intentos o no
  * @param letra caracter ingresado por tecldo, para compararlo con los caracteres de la palabra
  * @constructor
@@ -338,6 +336,7 @@ function mostrarPalabra (palabra, ahorcado, letra)
     var p;
     var cont=0, cont2=0;
     letra = letra.toUpperCase();
+
     for(p in palabra)
     {
         if(letra == palabra[p])
@@ -386,7 +385,7 @@ function cargarWeb(){
 
 /**
  * @method mostrarPista - convierte la palabra secreta en guiones (-)
- * @param espacio convertir en guiones las letras de la palabra, vector de letras con las que se forma la palabra
+ * @param espacio vector con las letras de la palabra a adivinar
  * @constructor
  */
     function mostrarPista(espacio)
@@ -398,7 +397,7 @@ function cargarWeb(){
 
         for(i = 0; i < largo; i++)
         {
-            if(espacio[i] != undefined)
+            if(espacio[i] !== undefined)
             {
                 texto = texto + espacio[i] + " ";
             }
