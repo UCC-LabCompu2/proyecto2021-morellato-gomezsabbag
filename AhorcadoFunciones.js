@@ -144,19 +144,24 @@ function Elegir(catalogo, cantidadlet){
 
 }
 /**
- * @method Ahorcado.prototype - imagenes para usar en el canvas segun los aciertos o errores
- * @param con contexto del canvas
+ * @method Ahorcado - clase ahorcado que contiene el contexto del canvas, maximo de intentos, intentos, si esta vivo y
+ * que llama a la funcion dibujar cada ves para actualizar el canvas
+ * @param contex contexto del canvas
  */
-var Ahorcado = function(con)
+var Ahorcado = function(contex)
 {
 
-    this.contexto = con;
+    this.contexto = contex;
     this.maximo = 7;
     this.intentos = 0;
     this.vivo = true;
     this.dibujar();
 
 }
+/**
+ * @method Ahorcado.prototype.dibujar - funcion de la clase ahorcado que se instancia cada vez que ahorcado se instancia
+ * @param contexto, contexto 2d del canvas
+ */
 
 Ahorcado.prototype.dibujar = function()
 {
@@ -173,13 +178,12 @@ Ahorcado.prototype.dibujar = function()
     dibujar.stroke();
     dibujar.closePath();
 
-    if(this.intentos > 0)
-    {
+    if(this.intentos > 0) {
         // Cabeza
         dibujar.beginPath();
-        dibujar.arc(150, 140, 40, 0,Math.PI*2, false);
-        dibujar.strokeStyle="blue";
-        dibujar.lineWidth=2;
+        dibujar.arc(150, 140, 40, 0, Math.PI * 2, false);
+        dibujar.strokeStyle = "blue";
+        dibujar.lineWidth = 2;
         dibujar.stroke();
         dibujar.closePath();
 
@@ -258,7 +262,7 @@ Ahorcado.prototype.dibujar = function()
 
 
 /**
- *  @method Ahorcado.prototype.trazar - interfiere en cuando es un error y cuando no para mantener vivo o matar al muñeco.
+ *  @method Ahorcado.prototype.trazar - interfiere en cuando es un error y cuando no para agregar un intento y dibujar una parte mas del canvas.
  */
 Ahorcado.prototype.trazar = function()
 {
@@ -268,8 +272,6 @@ Ahorcado.prototype.trazar = function()
         this.vivo = false;
     }
     this.dibujar();
-
-
 }
 
 
@@ -288,8 +290,7 @@ function iniciar()
     var cantidadlet=localStorage.getItem("cantidadlet");
 
     var canvas = document.getElementById("canv");
-    canvas.width = 500;
-    canvas.height = 350;
+
 
     var contexto = canvas.getContext("2d");
     hombre = new Ahorcado(contexto);
